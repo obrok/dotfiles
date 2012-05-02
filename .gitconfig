@@ -1,0 +1,24 @@
+[user]
+	name = obrok
+	email = pawel.obrok@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	l = log --oneline --decorate --graph --all
+	c = checkout
+	s = status
+	aa = add -A
+	m = merge
+	d = diff
+	co = commit -m
+	coa = commit --amend
+	p = pull
+	ca = commit -a -m
+	ap = add -p
+[lias]
+	co = commit
+[branch]
+	autosetuprebase = always
