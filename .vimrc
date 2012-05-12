@@ -1,8 +1,18 @@
 set nocompatible
 
-" Pathogen
-call pathogen#infect()
-call pathogen#helptags()
+let mapleader = "\<Space>"
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'kien/ctrlp.vim'
+
+nmap <leader>f :CtrlP<CR>
+nmap <leader>b :CtrlPMRU<CR>
+
+Bundle 'nono/vim-handlebars'
+Bundle 'kchmck/vim-coffee-script'
 
 " ================ General Config ====================
 
@@ -78,8 +88,8 @@ source ~/.molokai.vim
 
 map <F4> <ESC>:let g:test_file = "<C-r>%"<CR>
 imap <F4> <ESC>:let g:test_file = "<C-r>%"<CR>
-imap <F2> <ESC>:w<CR>:!rspec <C-r>=g:test_file<CR><CR>
-map <F2> <ESC>:w<CR>:!rspec <C-r>=g:test_file<CR><CR>
+imap <F2> <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
+map <F2> <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <F6> <ESC>:w<CR>:!nosetests<CR>
 imap <F6> <ESC>:w<CR>:!nosetests<CR>
 
