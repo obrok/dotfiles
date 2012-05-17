@@ -13,10 +13,13 @@ nmap <leader>b :CtrlPMRU<CR>
 
 Bundle 'nono/vim-handlebars'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'ervandew/supertab'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-commentary'
 
 " ================ General Config ====================
 
-set number                      "Line numbers are good
+set relativenumber                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -92,5 +95,14 @@ imap <F2> <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <F2> <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <F6> <ESC>:w<CR>:!nosetests<CR>
 imap <F6> <ESC>:w<CR>:!nosetests<CR>
+
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
 
 nnoremap <F5> :%s/\s\+$<CR>:w<CR>
