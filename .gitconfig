@@ -6,6 +6,7 @@
 	diff = auto
 	interactive = auto
 	status = auto
+  ui = true
 [alias]
 	l = log --oneline --decorate --graph --all
 	c = checkout
