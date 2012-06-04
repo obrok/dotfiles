@@ -16,6 +16,9 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'ervandew/supertab'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-commentary'
+Bundle 'wlangstroth/vim-haskell'
+Bundle 'sickill/vim-pasta'
+Bundle 'vim-ruby/vim-ruby'
 
 " ================ General Config ====================
 
@@ -95,6 +98,8 @@ imap <F2> <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <F2> <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <F6> <ESC>:w<CR>:!nosetests<CR>
 imap <F6> <ESC>:w<CR>:!nosetests<CR>
+map <F7> <ESC>:w<CR>:!mlint.sh<CR>
+imap <F7> <ESC>:w<CR>:!mlint.sh<CR>
 
 noremap  <Up> ""
 noremap! <Up> <Esc>
@@ -106,3 +111,9 @@ noremap  <Right> ""
 noremap! <Right> <Esc>
 
 nnoremap <F5> :%s/\s\+$<CR>:w<CR>
+
+au BufRead,BufNewFile *.hamlc set ft=haml
+
+set laststatus=2
+set ruler
+set cpoptions+=$
