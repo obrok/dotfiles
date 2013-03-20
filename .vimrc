@@ -3,13 +3,13 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'nono/vim-handlebars'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'ervandew/supertab'
-" Bundle 'Valloric/YouCompleteMe'
+" Bundle 'ervandew/supertab'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-commentary'
 Bundle 'wlangstroth/vim-haskell'
@@ -20,6 +20,7 @@ Bundle 'msmorgan/vim-flex'
 Bundle 'tjennings/git-grep-vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-fugitive'
+Bundle 'wikitopian/hardmode'
 
 " ================ General Config ====================
 
@@ -100,6 +101,7 @@ colorscheme solarized
 let mapleader = "\<Space>"
 
 map <leader>t <ESC>:let g:test_file = "<C-r>%"<CR>
+map <leader>l <ESC>:let g:test_file = "<C-r>%:<C-r>=line(".")<CR>"<CR>
 map <leader>r <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <leader>a :w<CR>:!bin/rspec<CR>
 map <leader>m :w<CR>:!make<CR>
@@ -115,6 +117,7 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 au! BufNewFile,BufRead *.god set ft=ruby
 au BufRead,BufNewFile * set colorcolumn=80
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
+" au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 set laststatus=2
 set ruler
@@ -132,4 +135,16 @@ noremap <ESC><ESC> <ESC>:w<CR>
 
 autocmd! BufRead,BufNewFile *.ino set ft=cpp
 
-let g:ctrlp_custom_ignore = 'build/\|\.agility-shared\|.git'
+let g:ycm_key_detailed_diagnostics = "<leader>6"
+let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/'
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl,php' : ['->'],
+  \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir' : ['.'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
+
+set shortmess=I
