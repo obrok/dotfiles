@@ -1,3 +1,8 @@
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[core]
+excludesfile = /opt/boxen/config/git/gitignore
 [user]
 	name = obrok
 	email = pawel.obrok@gmail.com
@@ -19,7 +24,5 @@
 	p = pull
 	ca = commit -a -m
 	ap = add -p
-[lias]
-	co = commit
 [branch]
 	autosetuprebase = always
