@@ -6,6 +6,7 @@ alias gpu="git push -u origin HEAD"
 alias gg="git grep"
 alias sa="vim ~/.alias && source ~/.alias && pushd ~/projects/dotfiles &&
   git aa && git commit && git push origin master && popd"
+alias proj="cd ~/projcets"
 
 HASH="%C(yellow)%h%Creset"
 RELATIVE_TIME="%Cgreen(%ar)%Creset"
