@@ -21,6 +21,7 @@ Bundle 'tjennings/git-grep-vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-fugitive'
 Bundle 'wikitopian/hardmode'
+Bundle 'rodjek/vim-puppet'
 
 " ================ General Config ====================
 
