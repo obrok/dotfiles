@@ -8,6 +8,7 @@ alias sa="vim ~/.alias && source ~/.alias && pushd ~/projects/dotfiles &&
   git aa && git commit && git push origin master && popd"
 alias proj="cd ~/projects"
 alias boxr="cd /opt/boxen/repo"
+alias Rt="RAILS_ENV=test"
 
 HASH="%C(yellow)%h%Creset"
 RELATIVE_TIME="%Cgreen(%ar)%Creset"
