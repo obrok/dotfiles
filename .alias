@@ -10,6 +10,10 @@ alias proj="cd ~/projects"
 alias boxr="cd /opt/boxen/repo"
 alias Rt="RAILS_ENV=test"
 
+github() {
+  open "https://github.com/$1"
+}
+
 HASH="%C(yellow)%h%Creset"
 RELATIVE_TIME="%Cgreen(%ar)%Creset"
 AUTHOR="%C(bold blue)<%an>%Creset"
