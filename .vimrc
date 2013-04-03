@@ -22,6 +22,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-fugitive'
 Bundle 'wikitopian/hardmode'
 Bundle 'rodjek/vim-puppet'
+Bundle 'tpope/vim-surround'
 
 " ================ General Config ====================
 
