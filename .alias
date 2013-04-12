@@ -9,6 +9,7 @@ alias sa="vim ~/.alias && source ~/.alias && pushd ~/projects/dotfiles &&
 alias proj="cd ~/projects"
 alias boxr="cd /opt/boxen/repo"
 alias Rt="RAILS_ENV=test"
+alias dropship="~/Projects/base/gems/machina/executables/dropship"
 
 github() {
   open "https://github.com/$1"
