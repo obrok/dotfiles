@@ -119,6 +119,8 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 au! BufNewFile,BufRead *.god set ft=ruby
 au BufRead,BufNewFile * set colorcolumn=80
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
+autocmd! BufRead,BufNewFile *.ino set ft=cpp
+
 " au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 set laststatus=2
@@ -134,8 +136,6 @@ nmap <leader><leader> <c-^>
 nmap <leader>h :set hlsearch!<CR>
 noremap! <ESC><ESC> <ESC>:w<CR>
 noremap <ESC><ESC> <ESC>:w<CR>
-
-autocmd! BufRead,BufNewFile *.ino set ft=cpp
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
 let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/'
