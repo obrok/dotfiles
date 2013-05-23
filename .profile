@@ -4,3 +4,5 @@
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 
 export EDITOR=vim
+
+fortune -a
