@@ -2,27 +2,35 @@ set nocompatible
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'nono/vim-handlebars'
-Bundle 'kchmck/vim-coffee-script'
-" Bundle 'ervandew/supertab'
 Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-commentary'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'wlangstroth/vim-haskell'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'msmorgan/vim-flex'
-Bundle 'tjennings/git-grep-vim'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-fugitive'
-Bundle 'wikitopian/hardmode'
 Bundle 'rodjek/vim-puppet'
-Bundle 'tpope/vim-surround'
+
+" Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'vim-scripts/ruby-matchit'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'jgdavey/vim-blockle'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-commentary'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'ervandew/supertab'
+
+Bundle 'tjennings/git-grep-vim'
+Bundle 'tpope/vim-fugitive'
+
+Bundle 'michaeljsmith/vim-indent-object'
+
+Bundle 'altercation/vim-colors-solarized'
 
 " ================ General Config ====================
 
@@ -102,9 +110,9 @@ colorscheme solarized
 
 let mapleader = "\<Space>"
 
-map <leader>t <ESC>:let g:test_file = "<C-r>%"<CR>
-map <leader>l <ESC>:let g:test_file = "<C-r>%:<C-r>=line(".")<CR>"<CR>
-map <leader>r <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
+map <leader>tf <ESC>:let g:test_file = "<C-r>%"<CR>
+map <leader>tl <ESC>:let g:test_file = "<C-r>%:<C-r>=line(".")<CR>"<CR>
+map <leader>tr <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <leader>a :w<CR>:!bin/rspec<CR>
 map <leader>m :w<CR>:!make<CR>
 map <leader>g :GitGrep 
