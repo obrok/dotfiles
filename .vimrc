@@ -7,6 +7,9 @@ Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
 
+Bundle 'scrooloose/syntastic'
+let g:syntastic_coffee_checkers=['coffeelint']
+
 Bundle 'nono/vim-handlebars'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -14,12 +17,13 @@ Bundle 'wlangstroth/vim-haskell'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'msmorgan/vim-flex'
 Bundle 'rodjek/vim-puppet'
+Bundle 'tpope/vim-surround'
 
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/ruby-matchit'
 Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'jgdavey/vim-blockle'
+" Bundle 'jgdavey/vim-blockle'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -113,9 +117,10 @@ let mapleader = "\<Space>"
 map <leader>tf <ESC>:let g:test_file = "<C-r>%"<CR>
 map <leader>tl <ESC>:let g:test_file = "<C-r>%:<C-r>=line(".")<CR>"<CR>
 map <leader>tr <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
-map <leader>a :w<CR>:!bin/rspec<CR>
+map <leader>ta :w<CR>:!bin/rspec<CR>
 map <leader>m :w<CR>:!make<CR>
-map <leader>g :GitGrep 
+map <leader>gg :GitGrep <C-r><C-w><CR>
+map <leader>gs :GitGrep 
 map <leader>w <c-w>w
 map <leader>x :Gblame<CR>
 
@@ -144,6 +149,8 @@ nmap <leader><leader> <c-^>
 nmap <leader>h :set hlsearch!<CR>
 noremap! <ESC><ESC> <ESC>:w<CR>
 noremap <ESC><ESC> <ESC>:w<CR>
+nnoremap 0 ^
+nnoremap ^ 0
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
 let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/'

@@ -5,4 +5,6 @@
 
 export EDITOR=vim
 
+export PATH=$PATH:/opt/boxen/nvm/v0.8.8/lib/node_modules/coffeelint/bin
+
 fortune -a
