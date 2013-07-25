@@ -4,7 +4,7 @@ helper = /opt/boxen/bin/boxen-git-credential
 [core]
 excludesfile = /opt/boxen/config/git/gitignore
 [user]
-	name = obrok
+	name = Paweł Obrok
 	email = pawel.obrok@gmail.com
 [color]
 	branch = auto

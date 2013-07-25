@@ -9,6 +9,7 @@ Bundle 'kien/ctrlp.vim'
 
 Bundle 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
+Bundle 'tpope/vim-unimpaired'
 
 Bundle 'nono/vim-handlebars'
 Bundle 'pangloss/vim-javascript'
@@ -17,6 +18,9 @@ Bundle 'wlangstroth/vim-haskell'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'msmorgan/vim-flex'
 Bundle 'rodjek/vim-puppet'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'derekwyatt/vim-scala'
+
 Bundle 'tpope/vim-surround'
 
 " Bundle 'Valloric/YouCompleteMe'
