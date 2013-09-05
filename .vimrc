@@ -40,6 +40,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'michaeljsmith/vim-indent-object'
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
 
 " ================ General Config ====================
 
