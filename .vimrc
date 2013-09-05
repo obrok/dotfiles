@@ -9,6 +9,7 @@ Bundle 'kien/ctrlp.vim'
 
 Bundle 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
+let g:syntastic_scala_checkers=[]
 Bundle 'tpope/vim-unimpaired'
 
 Bundle 'nono/vim-handlebars'
@@ -157,7 +158,7 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
-let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/'
+let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/|target/'
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
   \   'objc' : ['->', '.'],
