@@ -11,6 +11,7 @@ alias boxr="cd /opt/boxen/repo"
 alias Rt="RAILS_ENV=test"
 alias dropship="~/Projects/base/gems/machina/executables/dropship"
 alias fdb="cp config/{database.yml.boxen,database.yml}"
+alias g=git
 
 github() {
   open "https://github.com/$1"
