@@ -12,8 +12,14 @@ alias Rt="RAILS_ENV=test"
 alias dropship="~/Projects/base/gems/machina/executables/dropship"
 alias fdb="cp config/{database.yml.boxen,database.yml}"
 alias g=git
+
 alias fs-api="cd ~/Projects/base/gems/fs-api"
-alias crm="cd ~/Projects/base/crm"
+alias crm="cd_service crm"
+alias core="cd_service core"
+
+cd_service() {
+  cd ~/Projects/base/$1
+}
 
 github() {
   open "https://github.com/$1"
