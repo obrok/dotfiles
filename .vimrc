@@ -126,7 +126,7 @@ map <leader>tr <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 map <leader>ta :w<CR>:!bin/rspec<CR>
 map <leader>m :w<CR>:!make<CR>
 map <leader>gg :GitGrep <C-r><C-w><CR>
-map <leader>gs :GitGrep 
+map <leader>gs :GitGrep ""<left>
 map <leader>w <c-w>w
 map <leader>x :Gblame<CR>
 

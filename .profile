@@ -8,4 +8,4 @@ export EDITOR=vim
 export GOPATH=/Users/obrok/gocode
 export PATH=$PATH:/opt/boxen/nvm/v0.8.8/lib/node_modules/coffeelint/bin:/usr/local/go/bin:/Users/obrok/Library/play-2.1.2
 
-fortune -a
+fortune -a | cowthink -n
