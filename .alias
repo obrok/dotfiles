@@ -14,8 +14,10 @@ alias fdb="cp config/{database.yml.boxen,database.yml}"
 alias g=git
 
 alias fs-api="cd ~/Projects/base/gems/fs-api"
-alias crm="cd_service crm"
-alias core="cd_service core"
+
+for service in crm core settings-frontend; do
+  alias $service="cd_service $service"
+done
 
 cd_service() {
   cd ~/Projects/base/$1
