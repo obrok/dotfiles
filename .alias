@@ -15,7 +15,7 @@ alias g=git
 
 alias fs-api="cd ~/Projects/base/gems/fs-api"
 
-for service in crm core settings-frontend app-frontend; do
+for service in crm core settings-frontend app-frontend sales; do
   alias $service="cd_service $service"
 done
 
