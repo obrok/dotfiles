@@ -15,13 +15,9 @@ alias g=git
 
 alias fs-api="cd ~/Projects/base/gems/fs-api"
 
-for service in crm core settings-frontend app-frontend sales; do
-  alias $service="cd_service $service"
+for service in `ls ~/Projects/base`; do
+  alias cd$service="cd ~/Projects/base/$service"
 done
-
-cd_service() {
-  cd ~/Projects/base/$1
-}
 
 github() {
   open "https://github.com/$1"
