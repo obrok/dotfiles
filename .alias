@@ -19,6 +19,10 @@ for service in `ls ~/Projects/base`; do
   alias cd$service="cd ~/Projects/base/$service"
 done
 
+for gem in `ls ~/Projects/base/gems`; do
+  alias cd$gem="cd ~/Projects/base/gems/$gem"
+done
+
 github() {
   open "https://github.com/$1"
 }
