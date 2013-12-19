@@ -14,6 +14,7 @@ alias fdb="cp config/{database.yml.boxen,database.yml}"
 alias g=git
 
 alias fs-api="cd ~/Projects/base/gems/fs-api"
+alias todo="~/script/todo.txt-cli-2.10/todo.sh"
 
 for service in `ls ~/Projects/base`; do
   alias cd$service="cd ~/Projects/base/$service"
