@@ -21,6 +21,7 @@ Bundle 'msmorgan/vim-flex'
 Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'amdt/vim-niji'
 
 Bundle 'tpope/vim-surround'
 

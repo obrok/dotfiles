@@ -30,6 +30,18 @@ github() {
   open "https://github.com/$1"
 }
 
+frakking() {
+  grid console $1 sandbox
+}
+
+frigging() {
+  grid console $1 staging
+}
+
+fucking() {
+  grid console $1 production
+}
+
 HASH="%C(yellow)%h%Creset"
 RELATIVE_TIME="%Cgreen(%ar)%Creset"
 AUTHOR="%C(bold blue)<%an>%Creset"
