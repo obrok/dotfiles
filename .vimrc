@@ -7,16 +7,17 @@ Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
 
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
 let g:syntastic_scala_checkers=[]
+let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
 Bundle 'tpope/vim-unimpaired'
 
 Bundle 'nono/vim-handlebars'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'wlangstroth/vim-haskell'
-Bundle 'vim-ruby/vim-ruby'
+" Bundle 'vim-ruby/vim-ruby'
 Bundle 'msmorgan/vim-flex'
 Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
