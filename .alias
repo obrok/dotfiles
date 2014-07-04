@@ -20,8 +20,6 @@ alias todo="~/script/todo.txt-cli-2.10/todo.sh"
 
 alias git_cleanup="git branch --merged | grep -v \* | xargs -n 1 git branch -d"
 
-alias peja="cowsay Reprezentuje biede"
-
 for service in `ls ~/Projects/base`; do
   alias cd$service="cd ~/Projects/base/$service"
 done
@@ -44,6 +42,10 @@ frigging() {
 
 fucking() {
   grid console $1 production
+}
+
+peja() {
+  cowsay $1 reprezentuje biede
 }
 
 HASH="%C(yellow)%h%Creset"
