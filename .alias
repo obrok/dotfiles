@@ -32,7 +32,7 @@ github() {
   open "https://github.com/$1"
 }
 
-frakking() {
+sadbox() {
   grid console $1 sandbox
 }
 
