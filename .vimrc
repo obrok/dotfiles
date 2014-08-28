@@ -25,6 +25,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'amdt/vim-niji'
 
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-abolish'
 
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/matchit.zip'
@@ -155,6 +156,7 @@ nmap <leader>b :CtrlPMRU<CR>
 nmap <leader>q :q<CR>
 nmap <leader><leader> <c-^>
 nmap <leader>h :set hlsearch!<CR>
+nmap <leader>e :vsplit<CR>
 noremap! <ESC><ESC> <ESC>:w<CR>
 noremap <ESC><ESC> <ESC>:w<CR>
 nnoremap 0 ^
