@@ -15,13 +15,12 @@ alias g=git
 alias json="python -mjson.tool"
 alias baw="bin/agility watch"
 
-alias fs-api="cd ~/Projects/base/gems/fs-api"
 alias todo="~/script/todo.txt-cli-2.10/todo.sh"
 
 alias git_cleanup="git branch --merged | grep -v \* | xargs -n 1 git branch -d"
 
-for service in `ls ~/Projects/base`; do
-  alias cd$service="cd ~/Projects/base/$service"
+for service in `ls /opt/base`; do
+  alias cd$service="cd /opt/base/$service"
 done
 
 for gem in `ls ~/Projects/base/gems`; do
