@@ -14,7 +14,8 @@ alias fdb="cp config/{database.yml.boxen,database.yml}"
 alias g=git
 alias json="python -mjson.tool"
 alias baw="bin/agility watch"
-alias vm="cd /Users/obrok/Projects/base/starter-kit && vagrant ssh"
+alias cdvm="cd /Users/obrok/Projects/base/starter-kit"
+alias vm="cdvm && vagrant ssh"
 
 alias todo="~/script/todo.txt-cli-2.10/todo.sh"
 
