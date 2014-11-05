@@ -23,6 +23,7 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'amdt/vim-niji'
+Bundle 'elixir-lang/vim-elixir'
 
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-abolish'

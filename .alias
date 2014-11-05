@@ -21,6 +21,10 @@ alias todo="~/script/todo.txt-cli-2.10/todo.sh"
 
 alias git_cleanup="git branch --merged | grep -v \* | xargs -n 1 git branch -d"
 
+alias tml="tmux list-sessions"
+alias tma="tmux -2 attach -t $1"
+alias tmk="tmux kill-session -t $1"
+
 for service in `ls /opt/base`; do
   alias cd$service="cd /opt/base/$service"
 done
