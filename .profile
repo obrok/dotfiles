@@ -13,3 +13,6 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
 fortune -a | cowthink -n
 
 export BASE_VM_MEMORY=8192
+export MITSCHEME_LIBRARY_PATH="/Applications/MIT\:GNU\ Scheme.app/Contents/Resources"
+
+source /opt/starter-kit-cli/extras/starter-kit-cli-extras.sh

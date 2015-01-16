@@ -163,6 +163,9 @@ noremap <ESC><ESC> <ESC>:w<CR>
 nnoremap 0 ^
 nnoremap ^ 0
 
+nnoremap <leader>p :set invpaste paste?<CR>
+set showmode
+
 let g:ycm_key_detailed_diagnostics = "<leader>6"
 let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/|target/'
 let g:ycm_semantic_triggers =  {
