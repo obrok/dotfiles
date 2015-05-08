@@ -44,6 +44,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'michaeljsmith/vim-indent-object'
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'morhetz/gruvbox'
 Bundle 'bling/vim-airline'
 
 " ================ General Config ====================
@@ -118,9 +119,9 @@ set backupdir=~/.vim/backup
 nnoremap <leader>h :set hlsearch!<CR>
 
 set t_Co=256
-" let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme gruvbox
 
 let mapleader = "\<Space>"
 
