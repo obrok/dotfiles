@@ -6,18 +6,8 @@ alias gpu="git push -u origin HEAD"
 alias gg="git grep"
 alias sa="vim ~/.alias && source ~/.alias && pushd ~/projects/dotfiles &&
   git aa && git commit && git push origin master && popd"
-alias proj="cd ~/projects"
-alias boxr="cd /opt/boxen/repo"
 alias Rt="RAILS_ENV=test"
 alias dropship="~/Projects/base/gems/machina/executables/dropship"
-alias fdb="cp config/{database.yml.boxen,database.yml}"
-alias g=git
-alias json="python -mjson.tool"
-alias baw="bin/agility watch"
-alias cdvm="cd /opt/starter-kit"
-alias vm="cdvm && vagrant ssh"
-
-alias todo="~/script/todo.txt-cli-2.10/todo.sh"
 
 alias git_cleanup="git branch --merged | grep -v \* | xargs -n 1 git branch -d"
 
@@ -36,22 +26,6 @@ done
 
 github() {
   open "https://github.com/$1"
-}
-
-sadbox() {
-  grid console $1 sandbox
-}
-
-frigging() {
-  grid console $1 staging
-}
-
-fucking() {
-  grid console $1 production
-}
-
-peja() {
-  cowsay $1 reprezentuje biede
 }
 
 git_replace() {
