@@ -15,6 +15,7 @@ alias tml="tmux list-sessions"
 alias tma="tmux -2 attach -t $1"
 alias tmk="tmux kill-session -t $1"
 alias tms="tmux switch -t $1"
+alias aws="/opt/boxen/homebrew/bin/aws"
 
 for service in `ls /opt/base`; do
   alias cd$service="cd /opt/base/$service"
