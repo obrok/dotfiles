@@ -43,4 +43,5 @@ FORMAT="$HASH $RELATIVE_TIME $AUTHOR $REFS $SUBJECT"
 
 alias glo="git --no-pager log --oneline --decorate --graph --abbrev-commit --date=relative --pretty='tformat:${FORMAT}' -n 10"
 alias gloa="git log --oneline --decorate --graph --abbrev-commit --date=relative --pretty='tformat:${FORMAT}'"
+alias glot="git log --oneline --decorate --graph --abbrev-commit --date=relative --pretty='tformat:${FORMAT}' --since 6am"
 alias gla="git log --all --oneline --decorate --graph --abbrev-commit --date=relative --pretty='tformat:${FORMAT}'"

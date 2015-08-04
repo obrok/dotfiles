@@ -168,15 +168,15 @@ nnoremap <leader>p :set invpaste paste?<CR>
 set showmode
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
-let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/|target/'
+let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/|target/\|_build/\|deps/\|rel/'
 let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
-  \   'perl,php' : ['->'],
-  \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir' : ['.'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \ }
+      \   'c' : ['->', '.'],
+      \   'objc' : ['->', '.'],
+      \   'cpp,objcpp' : ['->', '.', '::'],
+      \   'perl,php' : ['->'],
+      \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir' : ['.'],
+      \   'lua' : ['.', ':'],
+      \   'erlang' : [':'],
+      \ }
 
 set shortmess=I
