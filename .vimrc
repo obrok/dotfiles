@@ -122,7 +122,7 @@ nnoremap <leader>h :set hlsearch!<CR>
 
 set t_Co=256
 set background=dark
-" colorscheme gruvbox
+colorscheme gruvbox
 
 let mapleader = "\<Space>"
 
