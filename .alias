@@ -29,6 +29,11 @@ git_replace() {
   git grep -l $1 | xargs sed -i '' "s/$1/$2/g"
 }
 
+clone() {
+  cd ~/Projects
+  git clone $1
+}
+
 HASH="%C(yellow)%h%Creset"
 RELATIVE_TIME="%Cgreen(%ar)%Creset"
 AUTHOR="%C(bold blue)<%an>%Creset"

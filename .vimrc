@@ -1,7 +1,7 @@
 set nocompatible
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
@@ -22,7 +22,6 @@ Bundle 'msmorgan/vim-flex'
 Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'amdt/vim-niji'
 Bundle 'elixir-lang/vim-elixir'
 
 Bundle 'tpope/vim-surround'
@@ -43,7 +42,7 @@ Bundle 'tpope/vim-fugitive'
 
 Bundle 'michaeljsmith/vim-indent-object'
 
-Bundle 'altercation/vim-colors-solarized'
+" Bundle 'altercation/vim-colors-solarized'
 Bundle 'morhetz/gruvbox'
 Bundle 'bling/vim-airline'
 
@@ -120,8 +119,7 @@ nnoremap <leader>h :set hlsearch!<CR>
 
 set t_Co=256
 set background=dark
-" colorscheme solarized
-colorscheme gruvbox
+" colorscheme gruvbox
 
 let mapleader = "\<Space>"
 
