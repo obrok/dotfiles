@@ -17,12 +17,8 @@ alias tmk="tmux kill-session -t $1"
 alias tms="tmux switch -t $1"
 alias aws="/opt/boxen/homebrew/bin/aws"
 
-for service in `ls /opt/base`; do
-  alias cd$service="cd /opt/base/$service"
-done
-
-for gem in `ls ~/Projects/base/gems`; do
-  alias cd$gem="cd ~/Projects/base/gems/$gem"
+for project in `ls ~/Projects`; do
+  alias cd$project="cd ~/Projects/$project"
 done
 
 github() {
