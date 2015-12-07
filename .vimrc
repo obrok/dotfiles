@@ -3,48 +3,51 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
-" Bundle 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
 let g:syntastic_scala_checkers=[]
 let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
-Bundle 'nono/vim-handlebars'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'wlangstroth/vim-haskell'
-" Bundle 'vim-ruby/vim-ruby'
-Bundle 'msmorgan/vim-flex'
-Bundle 'rodjek/vim-puppet'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'elixir-lang/vim-elixir'
+Plugin 'nono/vim-handlebars'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'wlangstroth/vim-haskell'
+" Plugin 'vim-ruby/vim-ruby'
+Plugin 'msmorgan/vim-flex'
+Plugin 'rodjek/vim-puppet'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'elixir-lang/vim-elixir'
 
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-abolish'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-abolish'
 
-" Bundle 'Valloric/YouCompleteMe'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'vim-scripts/ruby-matchit'
-Bundle 'ecomba/vim-ruby-refactoring'
-" Bundle 'jgdavey/vim-blockle'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-commentary'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'ervandew/supertab'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/ruby-matchit'
+Plugin 'ecomba/vim-ruby-refactoring'
+" Plugin 'jgdavey/vim-blockle'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-commentary'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'ervandew/supertab'
 
-Bundle 'tjennings/git-grep-vim'
-Bundle 'tpope/vim-fugitive'
+Plugin 'tjennings/git-grep-vim'
+Plugin 'tpope/vim-fugitive'
 
-Bundle 'michaeljsmith/vim-indent-object'
+Plugin 'michaeljsmith/vim-indent-object'
 
-" Bundle 'altercation/vim-colors-solarized'
-Bundle 'morhetz/gruvbox'
-Bundle 'bling/vim-airline'
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
+Plugin 'bling/vim-airline'
+
+call vundle#end()
+filetype plugin indent on
 
 " ================ General Config ====================
 

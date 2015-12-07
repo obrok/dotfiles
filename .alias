@@ -16,6 +16,7 @@ alias tma="tmux -2 attach -t $1"
 alias tmk="tmux kill-session -t $1"
 alias tms="tmux switch -t $1"
 alias aws="/opt/boxen/homebrew/bin/aws"
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 
 for project in `ls ~/Projects`; do
   alias cd$project="cd ~/Projects/$project"
