@@ -7,7 +7,6 @@ alias gg="git grep"
 alias sa="vim ~/.alias && source ~/.alias && pushd ~/projects/dotfiles &&
   git aa && git commit && git push origin master && popd"
 alias Rt="RAILS_ENV=test"
-alias dropship="~/Projects/base/gems/machina/executables/dropship"
 
 alias git_cleanup="git branch --merged | grep -v \* | xargs -n 1 git branch -d"
 

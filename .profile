@@ -3,6 +3,7 @@
 [ -f ~/.base_profile.bash ] && source ~/.base_profile.bash
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 source ~/Projects/grid/extras/shell-completion/grid_completion.bash
+source /usr/local/etc/bash_completion.d/lein-completion.bash
 
 export EDITOR=vim
 
@@ -23,3 +24,5 @@ export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
