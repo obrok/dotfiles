@@ -13,6 +13,7 @@ let g:syntastic_scala_checkers=[]
 let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
 Plugin 'tpope/vim-unimpaired'
 
+Plugin 'vim-scripts/paredit.vim'
 Plugin 'nono/vim-handlebars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'

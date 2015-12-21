@@ -29,6 +29,10 @@ git_replace() {
   git grep -l $1 | xargs sed -i '' "s/$1/$2/g"
 }
 
+clone_private() {
+  clone git@github.com:$1.git
+}
+
 clone() {
   cd ~/Projects
   git clone $1
