@@ -119,26 +119,35 @@ let ruby_space_errors = 1
 set directory=~/.vim/working
 set backupdir=~/.vim/backup
 
-nnoremap <leader>h :set hlsearch!<CR>
-
 set t_Co=256
 set background=dark
 colorscheme gruvbox
 
 let mapleader = "\<Space>"
 
+" Select current file to test
 map <leader>tf <ESC>:let g:test_file = "<C-r>%"<CR>
+" Select current line to test
 map <leader>tl <ESC>:let g:test_file = "<C-r>%:<C-r>=line(".")<CR>"<CR>
+" Run selected test
 map <leader>tr <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
+" Run all tests
 map <leader>ta :w<CR>:!bin/rspec<CR>
+
 map <leader>m :w<CR>:!make<CR>
+map <leader>w <c-w>w
+
 map <leader>gg :GitGrep <C-r><C-w><CR>
 map <leader>gs :GitGrep ""<left>
-map <leader>w <c-w>w
 map <leader>x :Gblame<CR>
 
+" Remove spaces at ends of line
 nnoremap <leader>s ms:%s/\s\+$<CR>:w<CR>`s
+
+" Format whole file and go back to the same place
 nnoremap <leader>d mdgg=G`d
+
+" Make Y behave like D
 nnoremap Y y$
 
 au BufRead,BufNewFile *.hamlc set ft=haml
@@ -153,20 +162,33 @@ set laststatus=2
 set ruler
 set cpoptions+=$
 
+" Hash rocket in insert mode
 imap <c-l> <space>=><space>
 
+" CtrlP shortcuts
 nmap <leader>f :CtrlP<CR>
 nmap <leader>b :CtrlPMRU<CR>
+
 nmap <leader>q :q<CR>
+
+" Last file on double space
 nmap <leader><leader> <c-^>
-nmap <leader>h :set hlsearch!<CR>
 nmap <leader>e :vsplit<CR>
+
+" Toggle highlight
+nmap <leader>h :set hlsearch!<CR>
+
+" Double escape optionally exits insert and saves
 noremap! <ESC><ESC> <ESC>:w<CR>
 noremap <ESC><ESC> <ESC>:w<CR>
+
+" Use 0 to go to first text char in line
 nnoremap 0 ^
 nnoremap ^ 0
 
+" Toggle paste
 nnoremap <leader>p :set invpaste paste?<CR>
+
 set showmode
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
