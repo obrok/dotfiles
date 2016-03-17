@@ -24,6 +24,7 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'mxw/vim-jsx'
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
@@ -37,6 +38,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'ervandew/supertab'
+Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'tjennings/git-grep-vim'
 Plugin 'tpope/vim-fugitive'
@@ -192,7 +194,10 @@ nnoremap <leader>p :set invpaste paste?<CR>
 set showmode
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
-let g:ctrlp_custom_ignore = 'node_modules/\|build/\|\.agility-shared/\|.git/|target/\|_build/\|deps/\|rel/'
+let g:ctrlp_custom_ignore = {
+      \ 'dir': 'node_modules/\|build/\|\.agility-shared/\|.git/|target/\|_build/\|deps/\|rel/\|venv/\',
+      \ 'file': '\v\.pyc$',
+      \ }
 let g:ycm_semantic_triggers =  {
       \   'c' : ['->', '.'],
       \   'objc' : ['->', '.'],
