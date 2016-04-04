@@ -25,6 +25,7 @@ Plugin 'jnwhiteh/vim-golang'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
+Plugin 'vim-scripts/groovy.vim'
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
@@ -195,7 +196,7 @@ set showmode
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
 let g:ctrlp_custom_ignore = {
-      \ 'dir': 'node_modules/\|build/\|\.agility-shared/\|.git/|target/\|_build/\|deps/\|rel/\|venv/\',
+      \ 'dir': 'node_modules/\|build/\|\.agility-shared/\|.git/|target/\|_build/\|deps/\|rel/\|venv/',
       \ 'file': '\v\.pyc$',
       \ }
 let g:ycm_semantic_triggers =  {
