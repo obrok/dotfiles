@@ -17,6 +17,7 @@ alias tmk="tmux kill-session -t $1"
 alias tms="tmux switch -t $1"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias mtr="/usr/local/Cellar/mtr/0.86/sbin/mtr"
+alias dm='eval $(docker-machine env default)'
 
 for project in `ls ~/Projects`; do
   alias cd$project="cd ~/Projects/$project"
