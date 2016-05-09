@@ -156,6 +156,8 @@ nnoremap Y y$
 au BufRead,BufNewFile *.hamlc set ft=haml
 au! BufNewFile,BufRead *.god set ft=ruby
 au BufRead,BufNewFile * set colorcolumn=80
+au BufRead,BufNewFile *.ex,*.exs,*.erl,*.hrl set colorcolumn=110
+au BufRead,BufNewFile *.ex,*.exs,*.erl,*.hrl set textwidth=110
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
 autocmd! BufRead,BufNewFile *.ino set ft=cpp
 

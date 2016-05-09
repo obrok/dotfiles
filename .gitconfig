@@ -1,12 +1,9 @@
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
-
 [core]
-excludesfile = /opt/boxen/config/git/gitignore
 	autocrlf = input
 [user]
 	name = Paweł Obrok
 	email = pawel.obrok@gmail.com
+  signingkey = 87E03734
 [color]
 	branch = auto
 	diff = auto
@@ -29,3 +26,5 @@ excludesfile = /opt/boxen/config/git/gitignore
 	autosetuprebase = always
 [push]
 	default = simple
+[commit]
+	gpgsign = true
