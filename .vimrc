@@ -26,6 +26,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/groovy.vim'
+Plugin 'leafo/moonscript-vim'
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
@@ -49,6 +50,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'bling/vim-airline'
+Plugin 'godlygeek/tabular'
 
 call vundle#end()
 filetype plugin indent on
@@ -154,10 +156,11 @@ nnoremap <leader>d mdgg=G`d
 nnoremap Y y$
 
 au BufRead,BufNewFile *.hamlc set ft=haml
+au BufRead,BufNewFile *.moon set ft=moon
 au! BufNewFile,BufRead *.god set ft=ruby
 au BufRead,BufNewFile * set colorcolumn=80
-au BufRead,BufNewFile *.ex,*.exs,*.erl,*.hrl set colorcolumn=110
-au BufRead,BufNewFile *.ex,*.exs,*.erl,*.hrl set textwidth=110
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set colorcolumn=110
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set textwidth=110
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
 autocmd! BufRead,BufNewFile *.ino set ft=cpp
 
@@ -198,7 +201,7 @@ set showmode
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
 let g:ctrlp_custom_ignore = {
-      \ 'dir': 'node_modules/\|build/\|\.agility-shared/\|.git/|target/\|_build/\|deps/\|rel/\|venv/',
+      \ 'dir': '\v[\/]node_modules/|build/|.git/|target/|_build/|deps/|rel/|venv/|bundle|js_sandbox',
       \ 'file': '\v\.pyc$',
       \ }
 let g:ycm_semantic_triggers =  {
