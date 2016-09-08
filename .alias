@@ -44,6 +44,10 @@ c() {
   open "https://getbase.atlassian.net/wiki/dosearchsite.action?queryString=$1"
 }
 
+notify_done() {
+  osascript -e 'display notification "'$1'" sound name ""'
+}
+
 HASH="%C(yellow)%h%Creset"
 RELATIVE_TIME="%Cgreen(%ar)%Creset"
 AUTHOR="%C(bold blue)<%an>%Creset"
