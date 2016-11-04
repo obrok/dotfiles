@@ -25,6 +25,7 @@ export LC_ALL="en_US.UTF-8"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH="$HOME/.exenv/bin:$PATH"
+export PATH="$PATH:$HOME/.yarn/bin"
 eval "$(exenv init -)"
 
 export ODBCINI=~/.odbc.ini

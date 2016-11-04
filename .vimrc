@@ -5,9 +5,9 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
 let g:syntastic_scala_checkers=[]
 let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
@@ -160,8 +160,8 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 au BufRead,BufNewFile *.moon set ft=moon
 au! BufNewFile,BufRead *.god set ft=ruby
 au BufRead,BufNewFile * set colorcolumn=80
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set colorcolumn=110
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set textwidth=110
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set colorcolumn=120
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set textwidth=120
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
 autocmd! BufRead,BufNewFile *.ino set ft=cpp
 
