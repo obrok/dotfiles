@@ -19,7 +19,7 @@
 	d = diff
 	co = commit -m
 	coa = commit --amend
-	p = pull
+	p = pull --prune
 	ca = commit -a -m
 	ap = add -p
 [branch]

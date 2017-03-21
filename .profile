@@ -32,8 +32,5 @@ export ODBCINI=~/.odbc.ini
 export MAPRDRILLINI=~/.mapr.drillodbc.ini
 export LD_LIBRARY_PATH=/usr/local/lib:/opt/mapr/drillodbc/lib/64
 
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
-
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

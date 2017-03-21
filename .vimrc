@@ -28,6 +28,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/groovy.vim'
 Plugin 'leafo/moonscript-vim'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'lambdatoast/elm.vim'
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
