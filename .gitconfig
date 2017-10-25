@@ -22,6 +22,7 @@
 	p = pull --prune
 	ca = commit -a -m
 	ap = add -p
+	st = -c commit.gpgsign=false stash
 [branch]
 	autosetuprebase = always
 [push]

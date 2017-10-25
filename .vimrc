@@ -203,7 +203,7 @@ set showmode
 
 let g:ycm_key_detailed_diagnostics = "<leader>6"
 let g:ctrlp_custom_ignore = {
-      \ 'dir': '\v[\/]node_modules/|build/|.git/|target/|_build/|deps/|rel/|venv/|bundle|js_sandbox',
+      \ 'dir': '\v[\/]node_modules/|build/|.git/|target/|_build/|deps/|rel/|venv/|bundle|js_sandbox|_book',
       \ 'file': '\v\.pyc$',
       \ }
 let g:ycm_semantic_triggers =  {
@@ -217,3 +217,5 @@ let g:ycm_semantic_triggers =  {
       \ }
 
 set shortmess=I
+
+set path+=/usr/local/include

@@ -26,6 +26,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH="$HOME/.exenv/bin:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
+export C_INCLUDE_PATH=/usr/local/include
+export CPLUS_INCLUDE_PATH=/usr/local/include
 eval "$(exenv init -)"
 
 export ODBCINI=~/.odbc.ini
