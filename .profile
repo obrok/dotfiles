@@ -5,7 +5,7 @@
 export EDITOR=vim
 
 export GOPATH=/Users/obrok/gocode
-export PATH=$PATH:/usr/local/go/bin:/Users/obrok/Library/play-2.1.2:/Users/obrok/Library/activator
+export PATH=$PATH:/usr/local/go/bin:/Users/obrok/Library/play-2.1.2:/Users/obrok/Library/activator:/Users/yapee/.cargo/bin:/Users/yapee/chromedriver
 # export JAVA_HOME=$(/usr/libexec/java_home --request -v 1.8.0)
 
 fortune -a | cowthink -n

@@ -10,6 +10,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
 let g:syntastic_scala_checkers=[]
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
 Plugin 'tpope/vim-unimpaired'
 
@@ -24,11 +26,19 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'mhinz/vim-mix-format'
+let g:mix_format_silent_errors = 1
+" let g:mix_format_on_save = 1
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/groovy.vim'
 Plugin 'leafo/moonscript-vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'lambdatoast/elm.vim'
+Plugin 'jakwings/vim-pony'
+Plugin 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+Plugin 'racer-rust/vim-racer'
+let g:racer_experimental_completer = 1
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
@@ -161,10 +171,12 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 au BufRead,BufNewFile *.moon set ft=moon
 au! BufNewFile,BufRead *.god set ft=ruby
 au BufRead,BufNewFile * set colorcolumn=80
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set colorcolumn=120
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.hrl,*.rb,*.js set textwidth=120
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=120
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=120
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
 autocmd! BufRead,BufNewFile *.ino set ft=cpp
+au BufRead,BufNewFile *.ex,*.exs setlocal formatprg=
+au BufWritePost *.ex,*.exs silent! :MixFormat
 
 " au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
