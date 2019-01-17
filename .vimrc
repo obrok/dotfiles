@@ -37,8 +37,10 @@ Plugin 'lambdatoast/elm.vim'
 Plugin 'jakwings/vim-pony'
 Plugin 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
+let g:rustfmt_command = '/Users/yapee/.asdf/installs/rust/1.31.1/bin/rustfmt --force'
 Plugin 'racer-rust/vim-racer'
 let g:racer_experimental_completer = 1
+Plugin 'fatih/vim-go'
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
@@ -62,6 +64,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'bling/vim-airline'
+let g:airline_section_b = ''
 Plugin 'godlygeek/tabular'
 
 call vundle#end()
