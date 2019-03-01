@@ -66,6 +66,10 @@ Plugin 'morhetz/gruvbox'
 Plugin 'bling/vim-airline'
 let g:airline_section_b = ''
 Plugin 'godlygeek/tabular'
+Plugin 'chiel92/vim-autoformat'
+let g:formatterpath = ['/Users/yapee/Projects/quick_format/quick_format.rs/target/debug']
+let g:formatdef_quick_format = '"quick_format"'
+let g:formatters_elixir = ['quick_format']
 
 call vundle#end()
 filetype plugin indent on
@@ -123,7 +127,7 @@ filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:>-,trail:·,extends:>,precedes:<
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
@@ -178,8 +182,11 @@ au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set 
 au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=120
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
 autocmd! BufRead,BufNewFile *.ino set ft=cpp
-au BufRead,BufNewFile *.ex,*.exs setlocal formatprg=
-au BufWritePost *.ex,*.exs silent! :MixFormat
+" au BufWritePost *.ex,*.exs silent! :MixFormat
+au BufWrite *.ex,*.exs :Autoformat
+au FileType elixir let g:autoformat_autoindent = 0
+au FileType elixir let g:autoformat_retab = 0
+au FileType elixir let g:autoformat_remove_trailing_spaces = 0
 
 " au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
