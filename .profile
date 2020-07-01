@@ -4,14 +4,9 @@
 
 export EDITOR=vim
 
-export GOPATH=/Users/obrok/gocode
-export PATH=$PATH:/usr/local/go/bin:/Users/obrok/Library/play-2.1.2:/Users/obrok/Library/activator:/Users/yapee/.cargo/bin:/Users/yapee/chromedriver
-# export JAVA_HOME=$(/usr/libexec/java_home --request -v 1.8.0)
-
 fortune -a | cowthink -n
 
 export BASE_VM_MEMORY=8192
-export MITSCHEME_LIBRARY_PATH="/Applications/MIT\:GNU\ Scheme.app/Contents/Resources"
 
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
@@ -22,17 +17,11 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-export PATH="$HOME/.exenv/bin:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
 export C_INCLUDE_PATH=/usr/local/include
 export CPLUS_INCLUDE_PATH=/usr/local/include
-eval "$(exenv init -)"
 
-export ODBCINI=~/.odbc.ini
-export MAPRDRILLINI=~/.mapr.drillodbc.ini
-export LD_LIBRARY_PATH=/usr/local/lib:/opt/mapr/drillodbc/lib/64
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+. $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
