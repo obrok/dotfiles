@@ -66,10 +66,18 @@ Plugin 'morhetz/gruvbox'
 Plugin 'bling/vim-airline'
 let g:airline_section_b = ''
 Plugin 'godlygeek/tabular'
-Plugin 'chiel92/vim-autoformat'
-let g:formatterpath = ['/Users/yapee/Projects/quick_format/quick_format.rs/target/debug']
-let g:formatdef_quick_format = '"quick_format"'
-let g:formatters_elixir = ['quick_format']
+" Plugin 'chiel92/vim-autoformat'
+" let g:formatterpath = ['/Users/yapee/Projects/quick_format/quick_format.rs/target/debug']
+" let g:formatdef_quick_format = '"quick_format"'
+" let g:formatters_elixir = ['quick_format']
+
+" let g:ale_elixir_elixir_ls_release = expand("")
+
+Plugin 'autozimu/LanguageClient-neovim'
+
+let g:LanguageClient_serverCommands = {
+    \ 'elixir': ['/Users/yapee/Projects/elixir-ls/release/language_server.sh'],
+    \ }
 
 call vundle#end()
 filetype plugin indent on
@@ -174,6 +182,12 @@ nnoremap <leader>d mdgg=G`d
 " Make Y behave like D
 nnoremap Y y$
 
+" Go to definition
+nnoremap <leader>gd :call LanguageClient#textDocument_definition()<CR>
+
+" Format file
+nnoremap <leader>rf :call LanguageClient#textDocument_formatting()<CR>
+
 au BufRead,BufNewFile *.hamlc set ft=haml
 au BufRead,BufNewFile *.moon set ft=moon
 au! BufNewFile,BufRead *.god set ft=ruby
@@ -182,11 +196,10 @@ au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set 
 au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=120
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
 autocmd! BufRead,BufNewFile *.ino set ft=cpp
-" au BufWritePost *.ex,*.exs silent! :MixFormat
-au BufWrite *.ex,*.exs :Autoformat
-au FileType elixir let g:autoformat_autoindent = 0
-au FileType elixir let g:autoformat_retab = 0
-au FileType elixir let g:autoformat_remove_trailing_spaces = 0
+
+execute 'autocmd FileType '
+  \ . join(keys(g:LanguageClient_serverCommands), ',')
+  \ . ' autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()'
 
 " au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
