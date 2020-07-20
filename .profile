@@ -22,6 +22,9 @@ export C_INCLUDE_PATH=/usr/local/include
 export CPLUS_INCLUDE_PATH=/usr/local/include
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew --prefix openssl)"
 
 . $(brew --prefix asdf)/asdf.sh
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+. ~/.git-completion.bash
+eval "$(direnv hook bash)"

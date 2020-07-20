@@ -23,6 +23,7 @@
 	ca = commit -a -m
 	ap = add -p
 	st = -c commit.gpgsign=false stash
+	pu = push -u origin HEAD
 [branch]
 	autosetuprebase = always
 [push]
