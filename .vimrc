@@ -20,15 +20,11 @@ Plugin 'nono/vim-handlebars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'wlangstroth/vim-haskell'
-" Plugin 'vim-ruby/vim-ruby'
 Plugin 'msmorgan/vim-flex'
 Plugin 'rodjek/vim-puppet'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'mhinz/vim-mix-format'
-let g:mix_format_silent_errors = 1
-" let g:mix_format_on_save = 1
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/groovy.vim'
 Plugin 'leafo/moonscript-vim'
@@ -37,7 +33,6 @@ Plugin 'lambdatoast/elm.vim'
 Plugin 'jakwings/vim-pony'
 Plugin 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
-let g:rustfmt_command = '/Users/yapee/.asdf/installs/rust/1.31.1/bin/rustfmt --force'
 Plugin 'racer-rust/vim-racer'
 let g:racer_experimental_completer = 1
 Plugin 'fatih/vim-go'
@@ -45,11 +40,9 @@ Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
 
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ecomba/vim-ruby-refactoring'
-" Plugin 'jgdavey/vim-blockle'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -61,23 +54,18 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'michaeljsmith/vim-indent-object'
 
-" Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'bling/vim-airline'
 let g:airline_section_b = ''
 Plugin 'godlygeek/tabular'
-" Plugin 'chiel92/vim-autoformat'
-" let g:formatterpath = ['/Users/yapee/Projects/quick_format/quick_format.rs/target/debug']
-" let g:formatdef_quick_format = '"quick_format"'
-" let g:formatters_elixir = ['quick_format']
-
-" let g:ale_elixir_elixir_ls_release = expand("")
 
 Plugin 'autozimu/LanguageClient-neovim'
 
 let g:LanguageClient_serverCommands = {
     \ 'elixir': ['/Users/yapee/Projects/elixir-ls/release/language_server.sh'],
     \ }
+
+let g:LanguageClient_diagnosticsList = 'Disabled'
 
 call vundle#end()
 filetype plugin indent on
@@ -166,12 +154,13 @@ map <leader>tr <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
 " Run all tests
 map <leader>ta :w<CR>:!bin/rspec<CR>
 
-map <leader>m :w<CR>:!make<CR>
+" Switch windows
 map <leader>w <c-w>w
 
+" Git shortcuts
 map <leader>gg :GitGrep <C-r><C-w><CR>
 map <leader>gs :GitGrep ""<left>
-map <leader>x :Gblame<CR>
+map <leader>gb :Gblame<CR>
 
 " Remove spaces at ends of line
 nnoremap <leader>s ms:%s/\s\+$<CR>:w<CR>`s
@@ -186,29 +175,24 @@ nnoremap Y y$
 nnoremap <leader>gd :call LanguageClient#textDocument_definition()<CR>
 
 " Format file
-nnoremap <leader>rf :call LanguageClient#textDocument_formatting()<CR>
+nnoremap <leader>rf :call LanguageClient#textDocument_formatting_sync()<CR>
 
-au BufRead,BufNewFile *.hamlc set ft=haml
-au BufRead,BufNewFile *.moon set ft=moon
-au! BufNewFile,BufRead *.god set ft=ruby
+" Restart language server
+nnoremap <leader>rls :LanguageClientStop<CR>:LanguageClientStart<CR>
+
 au BufRead,BufNewFile * set colorcolumn=80
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=120
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=120
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=80
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=80
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
-autocmd! BufRead,BufNewFile *.ino set ft=cpp
 
+" Autoformat with LanguageClient on save
 execute 'autocmd FileType '
   \ . join(keys(g:LanguageClient_serverCommands), ',')
   \ . ' autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()'
 
-" au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
 set laststatus=2
 set ruler
 set cpoptions+=$
-
-" Hash rocket in insert mode
-imap <c-l> <space>=><space>
 
 " CtrlP shortcuts
 nmap <leader>f :CtrlP<CR>
