@@ -67,6 +67,12 @@ let g:LanguageClient_serverCommands = {
 
 let g:LanguageClient_diagnosticsList = 'Disabled'
 
+Plugin 'tpope/vim-projectionist'
+
+Plugin 'vim-test/vim-test'
+let test#strategy = 'vimterminal'
+let test#vim#term_position = 'vert belowright'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -179,6 +185,14 @@ nnoremap <leader>rf :call LanguageClient#textDocument_formatting_sync()<CR>
 
 " Restart language server
 nnoremap <leader>rls :LanguageClientStop<CR>:LanguageClientStart<CR>
+
+" Switch between test/code with projectionist
+nnoremap <leader>gt :A<CR>
+
+" Run tests with vim-test
+nnoremap <leader>rf :TestFile<CR>
+nnoremap <leader>rl :TestNearest<CR>
+nnoremap <leader>ra :TestSuite<CR>
 
 au BufRead,BufNewFile * set colorcolumn=80
 au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=80
