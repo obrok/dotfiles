@@ -1,79 +1,70 @@
 set nocompatible
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/vundle'
+Plug 'gmarik/vundle'
 
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
 let g:syntastic_scala_checkers=[]
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
-Plugin 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 
-Plugin 'vim-scripts/paredit.vim'
-Plugin 'nono/vim-handlebars'
-Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'wlangstroth/vim-haskell'
-Plugin 'msmorgan/vim-flex'
-Plugin 'rodjek/vim-puppet'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'mxw/vim-jsx'
-Plugin 'vim-scripts/groovy.vim'
-Plugin 'leafo/moonscript-vim'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'jakwings/vim-pony'
-Plugin 'rust-lang/rust.vim'
+Plug 'vim-scripts/paredit.vim'
+Plug 'nono/vim-handlebars'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'wlangstroth/vim-haskell'
+Plug 'msmorgan/vim-flex'
+Plug 'rodjek/vim-puppet'
+Plug 'jnwhiteh/vim-golang'
+Plug 'derekwyatt/vim-scala'
+Plug 'elixir-lang/vim-elixir'
+Plug 'mxw/vim-jsx'
+Plug 'vim-scripts/groovy.vim'
+Plug 'leafo/moonscript-vim'
+Plug 'tikhomirov/vim-glsl'
+Plug 'lambdatoast/elm.vim'
+Plug 'jakwings/vim-pony'
+Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
-Plugin 'racer-rust/vim-racer'
+Plug 'racer-rust/vim-racer'
 let g:racer_experimental_completer = 1
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-abolish'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
 
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'vim-scripts/ruby-matchit'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-commentary'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'ervandew/supertab'
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/ruby-matchit'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'ervandew/supertab'
+Plug 'editorconfig/editorconfig-vim'
 
-Plugin 'tjennings/git-grep-vim'
-Plugin 'tpope/vim-fugitive'
+Plug 'tjennings/git-grep-vim'
+Plug 'tpope/vim-fugitive'
 
-Plugin 'michaeljsmith/vim-indent-object'
+Plug 'michaeljsmith/vim-indent-object'
 
-Plugin 'morhetz/gruvbox'
-Plugin 'bling/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'bling/vim-airline'
 let g:airline_section_b = ''
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
-Plugin 'autozimu/LanguageClient-neovim'
 
-let g:LanguageClient_serverCommands = {
-    \ 'elixir': ['/Users/yapee/Projects/elixir-ls/release/language_server.sh'],
-    \ }
+Plug 'tpope/vim-projectionist'
 
-let g:LanguageClient_diagnosticsList = 'Disabled'
-
-Plugin 'tpope/vim-projectionist'
-
-Plugin 'vim-test/vim-test'
+Plug 'vim-test/vim-test'
 let test#strategy = 'vimterminal'
-let test#vim#term_position = 'vert belowright'
+let test#vim#term_position = 'belowright'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 " ================ General Config ====================
@@ -151,15 +142,6 @@ colorscheme gruvbox
 
 let mapleader = "\<Space>"
 
-" Select current file to test
-map <leader>tf <ESC>:let g:test_file = "<C-r>%"<CR>
-" Select current line to test
-map <leader>tl <ESC>:let g:test_file = "<C-r>%:<C-r>=line(".")<CR>"<CR>
-" Run selected test
-map <leader>tr <ESC>:w<CR>:!bin/rspec <C-r>=g:test_file<CR><CR>
-" Run all tests
-map <leader>ta :w<CR>:!bin/rspec<CR>
-
 " Switch windows
 map <leader>w <c-w>w
 
@@ -177,15 +159,6 @@ nnoremap <leader>d mdgg=G`d
 " Make Y behave like D
 nnoremap Y y$
 
-" Go to definition
-nnoremap <leader>gd :call LanguageClient#textDocument_definition()<CR>
-
-" Format file
-nnoremap <leader>rf :call LanguageClient#textDocument_formatting_sync()<CR>
-
-" Restart language server
-nnoremap <leader>rls :LanguageClientStop<CR>:LanguageClientStart<CR>
-
 " Switch between test/code with projectionist
 nnoremap <leader>gt :A<CR>
 
@@ -195,14 +168,9 @@ nnoremap <leader>rl :TestNearest<CR>
 nnoremap <leader>ra :TestSuite<CR>
 
 au BufRead,BufNewFile * set colorcolumn=80
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=80
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=80
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=100
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=100
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
-
-" Autoformat with LanguageClient on save
-execute 'autocmd FileType '
-  \ . join(keys(g:LanguageClient_serverCommands), ',')
-  \ . ' autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()'
 
 set laststatus=2
 set ruler
@@ -216,7 +184,6 @@ nmap <leader>q :q<CR>
 
 " Last file on double space
 nmap <leader><leader> <c-^>
-nmap <leader>e :vsplit<CR>
 
 " Toggle highlight
 nmap <leader>h :set hlsearch!<CR>
