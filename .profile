@@ -28,3 +28,4 @@ export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 . ~/.git-completion.bash
 eval "$(direnv hook bash)"
+. ~/.iterm2_shell_integration.bash

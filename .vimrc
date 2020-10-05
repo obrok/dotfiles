@@ -64,6 +64,10 @@ Plug 'vim-test/vim-test'
 let test#strategy = 'vimterminal'
 let test#vim#term_position = 'belowright'
 
+Plug 'chiel92/vim-autoformat'
+
+Plug 'slashmili/alchemist.vim'
+
 call plug#end()
 filetype plugin indent on
 
@@ -125,6 +129,13 @@ set list listchars=tab:>-,trail:·,extends:>,precedes:<
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
+" ================ Autoformat =======================
+
+au BufWrite * :Autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -168,8 +179,8 @@ nnoremap <leader>rl :TestNearest<CR>
 nnoremap <leader>ra :TestSuite<CR>
 
 au BufRead,BufNewFile * set colorcolumn=80
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=100
-au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=100
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set colorcolumn=120
+au BufRead,BufNewFile *.hs,*.ex,*.exs,*.erl,*.eex,*.hrl,*.rb,*.js,*.rs,*.md set textwidth=120
 au BufRead,BufNewFile COMMIT_EDITMSG set colorcolumn=50
 
 set laststatus=2
