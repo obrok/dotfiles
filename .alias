@@ -1,3 +1,4 @@
+alias vim="nvim"
 alias gs="git status"
 alias psa="ps aux | grep"
 alias tarx="tar xpzvf"
@@ -7,7 +8,6 @@ alias gg="git grep"
 alias sa="vim ~/.alias && source ~/.alias && pushd ~/projects/dotfiles &&
   git aa && git commit && git push origin master && popd"
 alias Rt="RAILS_ENV=test"
-alias dropship="/Users/yapee/Projects/machina/bin/dropship"
 
 alias git_cleanup="git branch --merged | grep -v \* | xargs -n 1 git branch -d"
 
@@ -15,29 +15,17 @@ alias tml="tmux list-sessions"
 alias tma="tmux -2 attach -t $1"
 alias tmk="tmux kill-session -t $1"
 alias tms="tmux switch -t $1"
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias mtr="/usr/local/Cellar/mtr/0.86/sbin/mtr"
-alias dm='eval $(docker-machine env default)'
 
-for project in `ls ~/Projects`; do
-  alias cd$project="cd ~/Projects/$project"
-done
+# for project in `ls ~/Projects`; do
+#   alias cd$project="cd ~/Projects/$project"
+# done
 
 github() {
   open "https://github.com/$1"
 }
 
 git_replace() {
-  git grep -l $1 | xargs sed -i '' "s/$1/$2/g"
-}
-
-clone_private() {
-  clone git@github.com:$1.git
-}
-
-clone() {
-  cd ~/Projects
-  git clone $1
+  git grep -l "$1" | xargs sed -i "s[${1}[${2}[g"
 }
 
 c() {
@@ -46,6 +34,10 @@ c() {
 
 notify_done() {
   osascript -e 'display notification "'$1'" sound name ""'
+}
+
+ldone() {
+  notify-send -u critical done
 }
 
 HASH="%C(yellow)%h%Creset"
@@ -60,3 +52,4 @@ alias glo="git --no-pager log --oneline --decorate --graph --abbrev-commit --dat
 alias gloa="git log --oneline --decorate --graph --abbrev-commit --date=relative --pretty='tformat:${FORMAT}'"
 alias glot="git log --oneline --decorate --graph --abbrev-commit --date=relative --pretty='tformat:${FORMAT}' --since 6am"
 alias gla="git log --all --oneline --decorate --graph --abbrev-commit --date=relative --pretty='tformat:${FORMAT}'"
+alias grep=rg

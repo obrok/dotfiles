@@ -14,6 +14,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
 Plug 'tpope/vim-unimpaired'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-scripts/paredit.vim'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
@@ -30,14 +31,11 @@ Plug 'leafo/moonscript-vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'lambdatoast/elm.vim'
 Plug 'jakwings/vim-pony'
-Plug 'rust-lang/rust.vim'
-let g:rustfmt_autosave = 1
-Plug 'racer-rust/vim-racer'
-let g:racer_experimental_completer = 1
 Plug 'fatih/vim-go'
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-unimpaired'
 
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/ruby-matchit'
@@ -209,6 +207,7 @@ nnoremap ^ 0
 
 " Toggle paste
 nnoremap <leader>p :set invpaste paste?<CR>
+set clipboard=unnamedplus
 
 set showmode
 
@@ -227,6 +226,27 @@ let g:ycm_semantic_triggers =  {
       \   'erlang' : [':'],
       \ }
 
+let g:coc_global_extensions = [
+            \'coc-rust-analyzer',
+            \'coc-go',
+            \'coc-yank',
+            \'coc-pairs',
+            \'coc-json',
+            \'coc-html',
+            \'coc-yaml',
+            \'coc-lists',
+            \'coc-snippets',
+            \'coc-prettier',
+            \'coc-xml',
+            \'coc-syntax',
+            \'coc-git',
+            \'coc-marketplace',
+            \'coc-highlight',
+            \'coc-tabnine',
+            \'coc-pyright',
+            \]
+            " \'coc-python',
+            "
 set shortmess=I
 
 set path+=/usr/local/include
