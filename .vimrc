@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'gmarik/vundle'
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'scrooloose/syntastic'
 let g:syntastic_coffee_checkers=['coffeelint']
@@ -15,6 +16,19 @@ let g:ruby_path='RBENV_VERSION=2.1.2 ruby'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vista.vim'
+let g:vista_executive_for = {
+      \ 'rust': 'coc',
+      \ }
+let g:vista#renderer#enable_icon = 1
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+
 Plug 'vim-scripts/paredit.vim'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
@@ -42,7 +56,6 @@ Plug 'vim-scripts/ruby-matchit'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plug 'ervandew/supertab'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'tjennings/git-grep-vim'
@@ -65,6 +78,7 @@ let test#vim#term_position = 'belowright'
 Plug 'chiel92/vim-autoformat'
 
 Plug 'slashmili/alchemist.vim'
+Plug 'github/copilot.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -198,8 +212,8 @@ nmap <leader><leader> <c-^>
 nmap <leader>h :set hlsearch!<CR>
 
 " Double escape optionally exits insert and saves
-noremap! <ESC><ESC> <ESC>:w<CR>
-noremap <ESC><ESC> <ESC>:w<CR>
+noremap! <ESC> <ESC>:w<CR>
+noremap <ESC> <ESC>:w<CR>
 
 " Use 0 to go to first text char in line
 nnoremap 0 ^
@@ -208,6 +222,10 @@ nnoremap ^ 0
 " Toggle paste
 nnoremap <leader>p :set invpaste paste?<CR>
 set clipboard=unnamedplus
+
+" coc next/prev error
+nnoremap [e :call CocAction('diagnosticNext')<CR>
+nnoremap ]e :call CocAction('diagnosticPrevious')<CR>
 
 set showmode
 
@@ -242,11 +260,44 @@ let g:coc_global_extensions = [
             \'coc-git',
             \'coc-marketplace',
             \'coc-highlight',
-            \'coc-tabnine',
             \'coc-pyright',
             \]
-            " \'coc-python',
-            "
+
+" Navigate autocomplete using tab and accept using enter
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
+let g:coc_snippet_next = '<Tab>'
+let g:coc_snippet_prev = '<S-Tab>'
+
+" stop annoying auto commenting on new lines
+au BufEnter * set fo-=c fo-=r fo-=o
+
+" coc navigation
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gf <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+
+" coc actions
+nmap <leader>cr <Plug>(coc-rename)
+nmap <leader>cf <Plug>(coc-quickfix)
+
+" vista
+nmap <leader>vf :Vista finder coc<CR>
+nmap <leader>vb :Vista coc<CR>
+
 set shortmess=I
 
 set path+=/usr/local/include
