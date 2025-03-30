@@ -75,13 +75,35 @@ Plug 'vim-test/vim-test'
 let test#strategy = 'vimterminal'
 let test#vim#term_position = 'belowright'
 
-Plug 'chiel92/vim-autoformat'
-
 Plug 'slashmili/alchemist.vim'
 Plug 'github/copilot.vim'
 
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'lukas-reineke/lsp-format.nvim'
+
 call plug#end()
 filetype plugin indent on
+
+lua require('lspconfig').gleam.setup({})
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "gleam", "elixir" },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+      enable = true,
+
+      disable = { },
+      additional_vim_regex_highlighting = false,
+    },
+}
+EOF
+
+lua << EOF
+require("lsp-format").setup {}
+require("lspconfig").gleam.setup { on_attach = require("lsp-format").on_attach }
+EOF
 
 " ================ General Config ====================
 
@@ -140,13 +162,6 @@ set list listchars=tab:>-,trail:·,extends:>,precedes:<
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
-
-" ================ Autoformat =======================
-
-au BufWrite * :Autoformat
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
 
 " ================ Scrolling ========================
 
